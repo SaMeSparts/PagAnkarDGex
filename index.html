@@ -3,39 +3,355 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PagCrVenta</title>
+    <title>PagAnkarDGex</title>
   </head>
 
-  <body class="relative flex flex-col items-center justify-center min-h-screen bg-no-repeat bg-gradient-to-b from-white to-green-500">
-    <img class="absolute top-0 mt-2 rounded-md shadow-xl w-96" src="./logo.jpg" />
+  <body class="w-screen min-h-screen font-sans bg-center bg-no-repeat bg-cover bg-gradient-to-br from-black to-gray-800">
+    
+    <!-- Navbar -->
+    <nav class="fixed z-50 w-8/12 h-16 px-2 -translate-x-1/2 bg-gray-900 border border-gray-700 rounded-full shadow-xl top-4 left-1/2 md:max-w-fit bg-opacity-70 backdrop-blur-sm">
+      <div class="container flex items-center justify-between h-full px-4 mx-auto max-w-7xl">
+        
 
-    <main class="flex items-center justify-center px-2 mx-10 bg-white border-b-4 border-r-4 border-green-600 rounded-lg hover:shadow-lg">
-      <section class="flex flex-col max-w-lg px-4 overflow-auto text-black max-h-52 md:max-w-xl md:max-h-52 ">
-        <section class="p-2">
-          <img src="./foto1.jpg" class="float-none h-auto mb-2 ml-4 rounded-lg shadow-md md:float-right w-60" />
-          <h1 class="text-xl font-stack">DESCRIPCIÓN DEL PROYECTO</h1>
-          <p class="text-xs text-justify font-roboto">
-            El usuario principal es cualquier persona interesada en conocer, monitorear y gestionar su consumo eléctrico de manera práctica; enfocada principalmente en  viviendas, oficinas o negocios con intereses en eficiencia energética y que busquen formas de reducir gastos. También es útil para técnicos, ingenieros y estudiantes que deseen observar el comportamiento eléctrico. EFI-VOLT.  El sistema está pensado para ser intuitivo, permitiendo que cualquier usuario, incluso sin experiencia técnica, pueda comprender las mediciones sin mayores complicaciones y tomar decisiones informadas, respaldadas por el uso de la página de gestión energética. Gracias al uso de sensores IoT, la información recolectada es confiable, precisa y se actualiza constantemente, sin ser tan costoso, permitiendo un control más dinámico (facilitado) y moderno del consumo energético.
-          </p>
+        <a href="/" class="flex-shrink-0">
+          <span class="text-2xl font-bold text-transparent md:mr-2 font-display bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
+            AnkarDGex
+          </span>
+        </a>
 
-        <div class="clear-both pt-4 ">
-          <img src="./foto2.jpg" class="float-none h-auto mt-4 mb-2 mr-4 rounded-lg shadow-md md:float-left w-60" />
-          <h2 class="mt-4 text-lg font-stack">¿En qué situaciones utilizará la interfaz?</h2>
-          <p class="mt-2 text-xs leading-relaxed text-justify font-roboto">
-            La interfaz puede ser utilizada en diferentes contextos, tanto en el hogar como en entornos laborales. Por ejemplo, el usuario puede acceder a ella para revisar el consumo durante el día, detectar picos de energía inusuales o identificar si algún aparato está consumiendo más electricidad de lo esperado por medio de la colecta de los sistemas IOT, así como en oficinas o pequeños negocios, puede ser utilizada para supervisar horarios de uso de maquinaria, iluminación o equipos de cómputo, ajustando su funcionamiento según la demanda. También resulta útil al final de la jornada o la semana para evaluar los hábitos de consumo y planear algunas estrategias de ahorro energético. En todos estos casos, esta interfaz ofrece información inmediata proveniente de sensores, lo que garantiza una observación en tiempo real y una respuesta rápida ante cualquier cambio en el sistema eléctrico, algo fundamental para mantener la eficiencia y evitar gastos innecesarios de manera general.
+        <div class="items-center hidden space-x-6 md:flex">
+          <a href="#servicios" class="block py-2 text-lg font-semibold text-gray-200 transition duration-150 font-display hover:text-white">Servicios</a>
+          <a href="#portafolio" class="block py-2 text-lg font-semibold text-gray-200 transition duration-150 font-display hover:text-white">Portafolio</a>
+          <a href="#sobre-mi" class="block py-2 text-lg font-semibold text-gray-200 transition duration-150 font-display hover:text-white">Sobre mí</a>
+          <a href="#contacto" class="px-4 py-1 text-sm font-medium text-white transition duration-150 rounded-full bg-dorado_oscuro hover:bg-orange-500 font-display">Contacto</a> 
+        </div>
+
+        <button id="open-sidebar-btn" class="text-gray-200 size-8 md:hidden">
+          <svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="fixed top-0 right-0 z-50 w-64 h-screen transition-transform duration-300 ease-in-out translate-x-full bg-gray-900 shadow-xl">
+      <div class="flex flex-col p-6 space-y-4">
+        <div>
+          <button id="close-sidebar-btn" class="size-6">
+            <svg class="text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <a href="#servicios" class="block py-2 text-lg font-semibold text-gray-300 transition duration-150 font-display hover:text-white">Servicios</a>
+        <a href="#portafolio" class="block py-2 text-lg font-semibold text-gray-300 transition duration-150 font-display hover:text-white">Portafolio</a>
+        <a href="#sobre-mi" class="block py-2 text-lg font-semibold text-gray-300 transition duration-150 font-display hover:text-white">Sobre mí</a>
+        <a href="#contacto" class="block py-2 text-lg font-semibold transition duration-150 text-dorado_oscuro hover:text-orange-400 font-display">Contacto</a>
+      </div>
+    </div>
+
+    <!-- Página inicio -->
+    <section id="inicio" class="relative w-full h-screen scroll-mt-24">
+      <div class="flex flex-col items-center justify-center w-full h-full px-4 text-center text-white">
+
+        <img class="w-auto mb-2 size-80" src="./AnkarDGex.svg" alt="Logo AnkarDGex" />
+        
+        <h1 class="text-5xl font-extrabold text-white md:text-7xl font-display">
+          Desarrollo Web que <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">Impulsa</span> tu Negocio
+        </h1>
+
+        <p class="max-w-2xl mt-6 text-lg text-gray-300 md:text-xl">
+          Soluciones web modernas, rápidas y a la medida que convierten visitantes en clientes.
+        </p>
+        
+        <div class="mt-10">
+          <a href="#contacto" class="px-8 py-3 text-lg font-semibold text-white transition duration-150 rounded-full bg-dorado_oscuro hover:bg-orange-500 font-display">
+            Inicia tu Proyecto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página Servicios -->
+    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
+      
+      <div class="container px-6 mx-auto max-w-7xl">
+        
+        <div id="servicios" class="mb-16 text-center scroll-mt-24">
+          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
+            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
+              Nuestros Servicios
+            </span>
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
+            Lo que hacemos para potenciar tu presencia digital.
           </p>
         </div>
-        <div class="clear-both pt-4 ">
-          <img src="./foto3.jpg" class="float-none h-auto mb-2 ml-4 rounded-lg shadow-md md:float-right w-60" />
-          <h2 class="mt-4 text-lg font-stack">¿Qué información necesita ver de forma inmediata?</h2>
-          <p class="mt-2 text-xs leading-relaxed text-justify font-roboto">
-            Con el uso de ambos, sensor de corriente y voltaje,  el usuario podría acceder rápidamente a los indicadores más relevantes, como el consumo actual (kW), el consumo acumulado del día (kWh) y el costo estimado generado hasta el momento. Esta información debe mostrarse de forma visual   mediante la interfaz gráfica y la página . Al visualizar las variaciones y tendencias de manera gráfica, el usuario puede detectar patrones, identificar momentos de mayor demanda y comprender mejor su gasto  energético. Además es fundamental que tenga acceso inmediato a los controles de los dispositivos conectados para actuar con rapidez, ya sea apagando un aparato o modificando su configuración de consumo energético; este tipo de monitoreo y control, basado en sensores IoT, representa una ventaja significativa frente a los métodos tradicionales, ya que brinda información precisa, actualizada y accesible desde cualquier lugar, impulsando un uso más eficiente y responsable de la energía, nuevamente impulsado por la propuesta de EFI-VOLT , de tener al alcance la gestión energética de manera sencilla.
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <div class="p-8 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
+            <svg class="w-12 h-12 mb-6 text-dorado_metalico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.174C2.999 7.58 2.25 8.507 2.25 9.574v8.257c0 1.067.75 1.994 1.802 2.169a.75.75 0 0 0 .701-.05 2.307 2.307 0 0 1 2.137 0 .75.75 0 0 0 .701.05c1.052-.175 1.802-1.102 1.802-2.169V9.574c0-1.067-.75-1.994-1.802-2.169a.75.75 0 0 0-.701.05 2.307 2.307 0 0 1-2.137 0 .75.75 0 0 0-.701-.05Z M15.75 7.5c-1.052.175-1.802 1.102-1.802 2.169v8.257c0 1.067.75 1.994 1.802 2.169a.75.75 0 0 0 .701-.05 2.307 2.307 0 0 1 2.137 0 .75.75 0 0 0 .701.05c1.052-.175 1.802-1.102 1.802-2.169V9.574c0-1.067-.75-1.994-1.802-2.169a.75.75 0 0 0-.701.05 2.307 2.307 0 0 1-2.137 0 .75.75 0 0 0-.701-.05Z" />
+            </svg>
+            <h3 class="mb-4 text-2xl font-bold text-white font-display">Diseño Web a Medida</h3>
+            <p class="text-gray-300">Páginas web únicas, responsivas y optimizadas que reflejan la identidad de tu marca y atraen a tus clientes.</p>
+          </div>
+
+          <div class="p-8 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
+            <svg class="w-12 h-12 mb-6 text-dorado_metalico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <h3 class="mb-4 text-2xl font-bold text-white font-display">Tiendas en Línea</h3>
+            <p class="text-gray-300">Construimos plataformas de E-Commerce seguras, rápidas y fáciles de administrar para que puedas vender 24/7.</p>
+          </div>
+
+          <div class="p-8 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
+            <svg class="w-12 h-12 mb-6 text-dorado_metalico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+            </svg>
+            <h3 class="mb-4 text-2xl font-bold text-white font-display">SEO y Mantenimiento</h3>
+            <p class="text-gray-300">Optimizamos tu sitio para los motores de búsqueda y ofrecemos planes de mantenimiento para que tu web esté siempre segura.</p>
+          </div>
+
+        </div>
+       </div>
+    </section>
+
+    <!-- Página Portafolio -->
+    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
+      
+      <div class="container px-6 mx-auto max-w-7xl">
+        
+        <div id="portafolio" class="mb-16 text-center scroll-mt-24">
+          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
+            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
+              Proyectos Destacados
+            </span>
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
+            Una muestra de nuestro trabajo más reciente.
           </p>
         </div>
-        </section>
-      </section>
-    </main>
-    <button class="z-10 px-4 py-2 mt-6 font-bold text-white bg-green-600 border-2 border-green-800 rounded-lg hover:bg-green-700" onclick="window.location.href='https://maze-binary-92200120.figma.site/'">Prototipo de interfaz</button>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <a 
+            href="https://samesparts.github.io/PagDG/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="block overflow-hidden transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105"
+          >
+            <img class="object-contain w-full h-48 bg-gray-100" src="./logo_Efi.jpg" alt="Logo EFI-VOLT" />
+            
+            <div class="p-6">
+              <h3 class="mb-3 text-2xl font-bold text-white font-display">EFI-VOLT</h3>
+              <p class="mb-4 text-gray-300">Plataforma de monitoreo de energía en tiempo real con hardware ESP32 e interfaz web moderna.</p>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Vite</span>
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Tailwind</span>
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Google</span>
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">FireBase</span>
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">ESP32</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="overflow-hidden transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
+            <img class="object-cover w-full h-48" src="https://placehold.co/600x400/000000/E6C200?text=Simulación+Fútbol" alt="Imagen del Proyecto Simulación Fútbol" />
+            <div class="p-6">
+              <h3 class="mb-3 text-2xl font-bold text-white font-display">Simulación Liga de Fútbol</h3>
+              <p class="mb-4 text-gray-300">Simulador de torneos de fútbol con lógica de partidos y estadísticas, construido en C++.</p>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">C++</span>
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">OOP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-hidden transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
+            <img class="object-cover w-full h-48" src="https://placehold.co/600x400/000000/DAA520?text=Cliente+Web" alt="Imagen del Proyecto Cliente" />
+            <div class="p-6">
+              <h3 class="mb-3 text-2xl font-bold text-white font-display">Página Web Corporativa</h3>
+              <p class="mb-4 text-gray-300">Diseño y desarrollo de un sitio web para un cliente del sector de servicios, enfocado en SEO.</p>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">React</span>
+                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">SEO</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Página Sobre mi-->
+    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
+      
+      <div class="container px-6 mx-auto max-w-7xl">
+        
+        <div id="sobre-mi" class="mb-16 text-center scroll-mt-24">
+          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
+            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
+              Sobre Mí
+            </span>
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
+            Conoce un poco más sobre el desarrollador detrás del código.
+          </p>
+        </div>
+
+        <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
+
+          <div class="text-gray-300 md:text-lg">
+            <h3 class="mb-6 text-3xl font-bold text-white font-display">Hola, soy SaMeSparts</h3>
+            
+            <p class="mb-4">
+              Soy un desarrollador apasionado por crear soluciones tecnológicas limpias, modernas y eficientes. Mi especialidad es convertir ideas en aplicaciones web interactivas y funcionales, prestando especial atención a la experiencia de usuario y al rendimiento.
+            </p>
+            <p class="mb-4">
+              Con experiencia en un stack de tecnologías modernas que incluye **Vite, Tailwind CSS, y C++**, disfruto tanto del desarrollo frontend como del backend y la integración con hardware (como en el proyecto EFI-VOLT).
+            </p>
+            <p>
+              La formación continua es clave en este sector. Como demuestran mis certificaciones, me mantengo al día con las mejores prácticas y herramientas del mercado (¡especialmente con Tailwind CSS!).
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <img 
+              src="./certificado1.jpg" 
+              alt="Certificado Learn Tailwind CSS" 
+              class="w-full transition-transform duration-300 border border-gray-700 rounded-lg shadow-xl hover:scale-105"
+            />
+            <img 
+              src="./certificado2.jpg" 
+              alt="Certificado Build a Product Card with Tailwind" 
+              class="w-full transition-transform duration-300 border border-gray-700 rounded-lg shadow-xl hover:scale-105"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Página Contacto -->
+    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
+      
+      <div class="container px-6 mx-auto">
+        
+        <div id="contacto" class="mb-16 text-center scroll-mt-24">
+          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
+            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
+              Hablemos
+            </span>
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
+            ¿Listo para empezar tu proyecto? Envíame un mensaje.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <form 
+            action="https://formspree.io/f/mrbjzlbd" 
+            method="POST" 
+            class="p-8 space-y-6 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm"
+          >
+            
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label for="name" class="sr-only">Nombre</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  placeholder="Tu Nombre" 
+                  required 
+                  class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
+                />
+              </div>
+              <div>
+                <label for="email" class="sr-only">Email</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  id="email" 
+                  placeholder="Tu Correo Electrónico" 
+                  required 
+                  class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="sr-only">Asunto</label>
+              <input 
+                type="text" 
+                name="subject" 
+                id="subject" 
+                placeholder="Asunto del Mensaje" 
+                required 
+                class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="sr-only">Mensaje</label>
+              <textarea 
+                name="message" 
+                id="message" 
+                rows="6" 
+                placeholder="Tu Mensaje..." 
+                required 
+                class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
+              ></textarea>
+            </div>
+
+            <div class="text-center">
+              <button 
+                type="submit" 
+                class="px-8 py-3 text-lg font-semibold text-white transition duration-150 rounded-full font-display bg-dorado_oscuro hover:bg-orange-500"
+              >
+                Enviar Mensaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer-->
+    <footer class="w-full mt-32 text-gray-400">
+      
+      <div class="p-6 mx-auto bg-gray-900 border border-gray-700 rounded-lg shadow-xl max-w-7xl bg-opacity-70 backdrop-blur-sm">
+        
+        <div class="flex flex-col items-center justify-between md:flex-row">
+          
+          <div class="text-sm">
+            <p>&copy; 2025 AnkarDGex. Todos los derechos reservados.</p>
+          </div>
+
+          <div class="flex mt-4 space-x-6 md:mt-0">
+            <a href="https://github.com/SaMeSparts" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300 hover:text-dorado_suave">
+              <span class="sr-only">GitHub</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.84a9.56 9.56 0 0 1 2.518.337c1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z" clip-rule="evenodd" />
+              </svg>
+            </a>
+
+          
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+
 
     <script type="module" src="./src/main.js"></script>
   </body>

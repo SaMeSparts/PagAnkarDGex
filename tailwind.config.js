@@ -7,8 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['"Roboto Condensed"', 'sans-serif'],
-        stack: ['"Stack Sans Notch"', 'sans-serif'],
+        // 'font-display' será para títulos (Poppins)
+        display: ['Poppins', 'sans-serif'],
+        // 'font-sans' será la fuente por defecto (Roboto)
+        sans: ['Roboto', 'sans-serif'],
+      },
+      colors: {
+        dorado_oscuro: "#E8860B",
+        dorado_suave:"#E6C200",
+        dorado_metalico:"#DAA520",
       },
     },
   },
